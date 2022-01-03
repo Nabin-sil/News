@@ -12,12 +12,16 @@ export class HeaderComponent implements OnInit {
 
 //display data
 topHeadingData:any=[];
+isLoading = true;
+
 
   ngOnInit(): void {
   
      this.service.heading().subscribe((result)=>{
        console.log(result);
        this.topHeadingData = result.articles
+       this.isLoading = false;
+
      })
   }
 
